@@ -16,15 +16,15 @@ const LoginForm = ({ mode, onSubmit }) => {
 
   useEffect(() => {
     if (mode === "login") {
-      setFormdata({
-        ...formdata,
+      setFormdata((f) => ({
+        ...f,
         fullname: "",
         email: "",
         createpassword: "",
         repeatpassword: "",
-      });
+      }));
     } else if (mode === "signup") {
-      setFormdata({ ...formdata, username: "", password: "" });
+      setFormdata((f) => ({ ...f, username: "", password: "" }));
     }
   }, [mode]);
 
